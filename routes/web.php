@@ -19,4 +19,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/main', 'App\Http\Controllers\Main@index')->name('main.index');
 Route::get('/account', 'App\Http\Controllers\Account@index')->name('account.index');
+
+
+
 Route::get('/cards', 'App\Http\Controllers\Cards@index')->name('cards.index');
+Route::get('/cards/create', 'App\Http\Controllers\Cards@create')->name('create.index');
+Route::post('/cards', 'App\Http\Controllers\Cards@store')->name('card.store');
+

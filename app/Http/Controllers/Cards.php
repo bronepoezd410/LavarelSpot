@@ -19,4 +19,18 @@ class Cards extends Controller
         return view('card.create');
     }
 
+    public function store()
+    {
+        $data = request()->validate([
+            'id'=>'',
+            'name'=>'string',
+            'artist_name'=>'string',
+            'category'=>'string',
+            'image'=>'string',
+            'fame'=>'integer',
+        ]);
+        Cards::create($data);
+        return redirect()->route('cards.index');
+    }
+
 }
